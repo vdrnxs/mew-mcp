@@ -1,10 +1,10 @@
-# MCP Server
+# lean-mcp
 
-A Model Context Protocol (MCP) server implementation using FastMCP, providing computational tools through a standardized interface.
+A lightweight, minimal MCP (Model Context Protocol) server starter template. Built with Python and FastMCP for quick deployment and easy customization.
 
 ## Overview
 
-This server exposes computational tools via the MCP protocol using HTTP transport. Built with Python and FastMCP, it demonstrates a minimal yet production-ready MCP server implementation.
+lean-mcp is a lean, no-frills foundation for building MCP servers. It provides essential tooling infrastructure with streamable HTTP transport, ready to be adapted for your specific use case.
 
 ## Features
 
@@ -28,8 +28,8 @@ This server exposes computational tools via the MCP protocol using HTTP transpor
 
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd mew-mcp
+git clone https://github.com/vdrnxs/lean-mcp.git
+cd lean-mcp
 
 # Install dependencies
 uv sync
@@ -60,7 +60,7 @@ Expected output:
 >>>  Calling read_file tool for pyproject.toml
 <<<  Result:
 [project]
-name = "mew-mcp"
+name = "lean-mcp"
 version = "0.1.0"
 ...
 ```
@@ -80,7 +80,7 @@ The server implements the [Model Context Protocol](https://modelcontextprotocol.
 ### Project Structure
 
 ```
-mew-mcp/
+lean-mcp/
 ├── server.py          # Main server implementation
 ├── test_server.py     # Client test suite
 ├── pyproject.toml     # Project dependencies

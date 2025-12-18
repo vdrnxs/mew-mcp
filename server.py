@@ -7,7 +7,7 @@ from fastmcp import FastMCP
 logger = logging.getLogger(__name__)
 logging.basicConfig(format="[%(levelname)s]: %(message)s", level=logging.INFO)
 
-mcp = FastMCP("MCP Server on Cloud Run")
+mcp = FastMCP("lean-mcp")
 
 @mcp.tool()
 def add(a: int, b: int) -> int:
@@ -53,8 +53,8 @@ def read_file(file_path: str) -> str:
         return error_msg
 
 if __name__ == "__main__":
-    logger.info(f" MCP server started on port {os.getenv('PORT', 8080)}")
-    # Could also use 'sse' transport, host="0.0.0.0" required for Cloud Run.
+    logger.info(f" lean-mcp server started on port {os.getenv('PORT', 8080)}")
+    # Using streamable-http transport for HTTP-based communication.
     asyncio.run(
         mcp.run_async(
             transport="streamable-http", 
